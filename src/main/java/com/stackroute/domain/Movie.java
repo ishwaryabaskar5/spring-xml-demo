@@ -4,6 +4,13 @@ public class Movie {
 	
 	private Actor actor;
 	
+	public Movie() {
+	}
+	
+	public Movie(Actor actor) {
+		this.actor = actor;
+	}
+	
 	public Actor getActor() {
 		return actor;
 	}
@@ -14,6 +21,6 @@ public class Movie {
 	
 	public void display()
 	{
-		System.out.println("Actor Name: "+actor.getName()+" Gender: "+actor.getGender()+"Age: "+actor.getAge() );
+		System.out.println("Actor Name: "+actor.getName()+" Gender: "+actor.getGender()+" Age: "+actor.getAge() );
 	}
 }

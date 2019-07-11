@@ -4,13 +4,56 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<!--    Task 1-->
     <bean id="actorObj" class="com.stackroute.domain.Actor">
-        <property name="name" value="vijay" />
+        <property name="name" value="sivakarthikeyan" />
         <property name="gender" value="male" />
-        <property name="age" value="36" />
+        <property name="age" value="30" />
     </bean>
 
     <bean id="movieObj" class="com.stackroute.domain.Movie" >
         <property name="actor" ref="actorObj" />
     </bean>
+
+<!--    Task 2-->
+<!--    First actor using constructor-->
+    <bean name="actorObj1" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="vijay" type="String" index="0"/>
+        <constructor-arg name="gender" value="male" type="String" index="1"/>
+        <constructor-arg name="age" value="36" type="int" index="2"/>
+
+    </bean>
+
+<!--    First movie using constructor-->
+    <bean name="movieObj1,movieObject" class="com.stackroute.domain.Movie" >
+        <constructor-arg name="actor" ref="actorObj1" />
+    </bean>
+
+<!--    Second actor using constructor-->
+    <bean id="actorObj2" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="ajith" type="String" index="0"/>
+        <constructor-arg name="gender" value="male" type="String" index="1"/>
+        <constructor-arg name="age" value="40" type="int" index="2"/>
+
+    </bean>
+
+<!--    Second actor using constructor-->
+    <bean id="movieObj2" class="com.stackroute.domain.Movie" >
+        <constructor-arg name="actor" ref="actorObj2" />
+    </bean>
+
+<!--    Third actor using constructor-->
+    <bean id="actorObj3" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="surya" type="String" index="0"/>
+        <constructor-arg name="gender" value="male" type="String" index="1"/>
+        <constructor-arg name="age" value="35" type="int" index="2"/>
+
+    </bean>
+
+<!--    Third movie using constructor-->
+    <bean id="movieObj3" class="com.stackroute.domain.Movie" scope="prototype" >
+        <constructor-arg name="actor" ref="actorObj3" />
+    </bean>
+
+
 </beans>

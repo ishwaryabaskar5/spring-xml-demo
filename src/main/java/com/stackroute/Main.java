@@ -15,18 +15,36 @@ import org.springframework.core.io.FileSystemResource;
 public class Main {
 		public static void main( String[] args )
 		{
-			ApplicationContext context = new FileSystemXmlApplicationContext("src/main/resources/beans.xml");
+//			Task 1 - Using ApplicationContext
+			ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 			Movie movie1 = context.getBean("movieObj",Movie.class);
 			movie1.display();
 			
-			ApplicationContext context1 = new ClassPathXmlApplicationContext("beans.xml");
-			Movie movie2 = context1.getBean("movieObj",Movie.class);
+//			Task 1 - Using BeanFactory
+			BeanFactory factory = new XmlBeanFactory(new FileSystemResource("src/main/resources/beans.xml"));
+			Movie movie2 = factory.getBean("movieObj",Movie.class);
 			movie2.display();
 			
-			BeanFactory factory = new XmlBeanFactory(new FileSystemResource("src/main/resources/beans.xml"));
-			Movie movie3 = factory.getBean("movieObj",Movie.class);
+			BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();
+			BeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
+			beanDefinitionReader.loadBeanDefinitions(new FileSystemResource("src/main/resources/beans.xml"));
+			Movie movie3= (Movie) ((DefaultListableBeanFactory) beanDefinitionRegistry).getBean("movieObj");
 			movie3.display();
 			
+//			Task2
+			Movie movie4 = context.getBean("movieObj1",Movie.class);
+			movie4.display();
+			
+			Movie movie5 = context.getBean("movieObj2",Movie.class);
+			movie5.display();
+			
+			Movie movie6 = context.getBean("movieObj3",Movie.class);
+			movie6.display();
+			
+			System.out.println(movie6 == movie5);
+			
+			Movie movie8 = (Movie) context.getBean("movieObject");
+			movie8.display();
 		}
 
 }
