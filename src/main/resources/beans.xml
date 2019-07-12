@@ -6,6 +6,16 @@
 
 <!--    Task 5-->
 
+    <bean id="actorObj" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="vijay" />
+        <constructor-arg name="gender" value="male" />
+        <constructor-arg name="age" value="36" />
+    </bean>
+
+    <bean id="movieObj" class="com.stackroute.domain.Movie" >
+        <constructor-arg name="actorObj" ref="actorObj" />
+    </bean>
+
     <bean id="beanPostProcessorDemo" class="com.stackroute.domain.BeanPostProcessorDemoBean" />
 
 </beans>
