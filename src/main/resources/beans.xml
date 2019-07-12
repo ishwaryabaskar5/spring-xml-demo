@@ -4,15 +4,8 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    Task 1-->
-    <bean id="actorObj" class="com.stackroute.domain.Actor">
-        <property name="name" value="sivakarthikeyan" />
-        <property name="gender" value="male" />
-        <property name="age" value="30" />
-    </bean>
+<!--    Task 5-->
 
-    <bean id="movieObj" class="com.stackroute.domain.Movie" autowire="byName" />
-    <bean id="movieObj1" class="com.stackroute.domain.Movie" autowire="byType" />
-    <bean id="movieObj2" class="com.stackroute.domain.Movie" autowire="constructor" />
+    <bean id="beanLifeCycle" class="com.stackroute.domain.BeanLifecycleDemoBean"  init-method="customInit" destroy-method="customDestroy"/>
 
 </beans>
