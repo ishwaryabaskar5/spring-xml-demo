@@ -6,6 +6,6 @@
 
 <!--    Task 5-->
 
-    <bean id="beanLifeCycle" class="com.stackroute.domain.BeanLifecycleDemoBean"  init-method="customInit" destroy-method="customDestroy"/>
+    <bean id="beanPostProcessorDemo" class="com.stackroute.domain.BeanPostProcessorDemoBean" />
 
 </beans>
