@@ -41,7 +41,9 @@ public class Main {
 			Movie movie6 = context.getBean("movieObj3",Movie.class);
 			movie6.display();
 			
-			System.out.println(movie6 == movie5);
+			Movie movie7 = context.getBean("movieObj3",Movie.class);
+			
+			System.out.println(movie6 == movie7);
 			
 			Movie movie8 = (Movie) context.getBean("movieObject");
 			movie8.display();
