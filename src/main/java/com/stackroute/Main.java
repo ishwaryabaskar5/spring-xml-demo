@@ -27,6 +27,12 @@ public class Main {
 			Movie movie3 = factory.getBean("movieObj",Movie.class);
 			movie3.display();
 			
+			BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();
+			BeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
+			beanDefinitionReader.loadBeanDefinitions(new FileSystemResource("src/main/resources/beans.xml"));
+			Movie movie4= (Movie) ((DefaultListableBeanFactory) beanDefinitionRegistry).getBean("movieObj");
+			movie4.display();
+			
 		}
 
 }
