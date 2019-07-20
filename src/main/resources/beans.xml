@@ -4,12 +4,14 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<!--    Actor object-->
     <bean id="actorObj" class="com.stackroute.domain.Actor">
         <property name="name" value="vijay" />
         <property name="gender" value="male" />
         <property name="age" value="36" />
     </bean>
 
+<!--    Movie object-->
     <bean id="movieObj" class="com.stackroute.domain.Movie" >
         <property name="actor" ref="actorObj" />
     </bean>

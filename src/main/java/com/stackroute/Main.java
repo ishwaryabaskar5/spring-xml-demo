@@ -15,6 +15,7 @@ import org.springframework.core.io.FileSystemResource;
 public class Main {
 		public static void main( String[] args )
 		{
+//			ApplicationContext objects
 			ApplicationContext context = new FileSystemXmlApplicationContext("src/main/resources/beans.xml");
 			Movie movie1 = context.getBean("movieObj",Movie.class);
 			movie1.display();
@@ -23,10 +24,12 @@ public class Main {
 			Movie movie2 = context1.getBean("movieObj",Movie.class);
 			movie2.display();
 			
+//			BeanFactory object
 			BeanFactory factory = new XmlBeanFactory(new FileSystemResource("src/main/resources/beans.xml"));
 			Movie movie3 = factory.getBean("movieObj",Movie.class);
 			movie3.display();
 			
+//			BeanDefinitionRegistry object
 			BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();
 			BeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
 			beanDefinitionReader.loadBeanDefinitions(new FileSystemResource("src/main/resources/beans.xml"));
