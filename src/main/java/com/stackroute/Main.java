@@ -8,7 +8,10 @@ public class Main {
 		public static void main( String[] args )
 		{
 //			Task 3
+//			ApplicationContext object
 			ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+			
+//			Movie objects
 			Movie movie = context.getBean("movieObj",Movie.class);
 			movie.display();
 			

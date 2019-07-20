@@ -1,11 +1,13 @@
 package com.stackroute.domain;
 
 public class Actor {
-	
+
+//	declaration
 	private String name;
 	private String gender;
 	private int age;
 	
+//	constructor
 	public Actor() {
 	}
 	
@@ -15,6 +17,7 @@ public class Actor {
 		this.age = age;
 	}
 	
+//	getter and setter
 	public String getName() {
 		return name;
 	}

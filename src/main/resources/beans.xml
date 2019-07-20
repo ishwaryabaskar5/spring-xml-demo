@@ -5,12 +5,13 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!--    Task 1-->
+<!--    Actor object-->
     <bean id="actorObj" class="com.stackroute.domain.Actor">
         <property name="name" value="sivakarthikeyan" />
         <property name="gender" value="male" />
         <property name="age" value="30" />
     </bean>
-
+<!--    Movie objects-->
     <bean id="movieObj" class="com.stackroute.domain.Movie" autowire="byName" />
     <bean id="movieObj1" class="com.stackroute.domain.Movie" autowire="byType" />
     <bean id="movieObj2" class="com.stackroute.domain.Movie" autowire="constructor" />
