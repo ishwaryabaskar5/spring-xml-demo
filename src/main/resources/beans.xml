@@ -12,7 +12,9 @@
     </bean>
 <!--    Movie objects-->
     <bean id="movieObj" class="com.stackroute.domain.Movie" autowire="byName" />
-    <bean id="movieObj1" class="com.stackroute.domain.Movie" autowire="byType" />
-    <bean id="movieObj2" class="com.stackroute.domain.Movie" autowire="constructor" />
+
+<!--    Task 5-->
+<!--    BeanLifeCycle object with init and destroy method-->
+    <bean id="beanLifeCycle" class="com.stackroute.domain.BeanLifecycleDemoBean"  init-method="customInit" destroy-method="customDestroy"/>
 
 </beans>
