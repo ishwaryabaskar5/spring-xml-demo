@@ -32,6 +32,7 @@ public class Main {
 			movie3.display();
 			
 //			Task2
+//			Movie objects creation and display method call
 			Movie movie4 = context.getBean("movieObj1",Movie.class);
 			movie4.display();
 			
