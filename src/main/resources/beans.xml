@@ -4,7 +4,6 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    Task 1-->
 <!--    Actor object-->
     <bean id="actorObj" class="com.stackroute.domain.Actor">
         <property name="name" value="sivakarthikeyan" />
